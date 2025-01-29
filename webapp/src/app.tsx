@@ -1,23 +1,22 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
+import { History } from "history";
 import React, { useEffect } from "react";
-import { IntlProvider } from "react-intl";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { TouchBackend } from "react-dnd-touch-backend";
-import { History } from "history";
+import { IntlProvider } from "react-intl";
 
 import TelemetryClient from "./telemetry/telemetryClient";
 
-import { getMessages } from "./i18n";
 import { FlashMessages } from "./components/flashMessages";
-import NewVersionBanner from "./components/newVersionBanner";
-import { Utils } from "./utils";
-import { fetchMe, getMe } from "./store/users";
-import { getLanguage, fetchLanguage } from "./store/language";
-import { useAppSelector, useAppDispatch } from "./store/hooks";
-import { fetchClientConfig } from "./store/clientConfig";
+import { getMessages } from "./i18n";
 import FocalboardRouter from "./router";
+import { fetchClientConfig } from "./store/clientConfig";
+import { useAppDispatch, useAppSelector } from "./store/hooks";
+import { fetchLanguage, getLanguage } from "./store/language";
+import { fetchMe, getMe } from "./store/users";
+import { Utils } from "./utils";
 
 import { IUser } from "./user";
 
@@ -53,7 +52,6 @@ const App = (props: Props): JSX.Element => {
                 <FlashMessages milliseconds={2000} />
                 <div id="frame">
                     <div id="main">
-                        <NewVersionBanner />
                         <FocalboardRouter history={props.history} />
                     </div>
                 </div>
