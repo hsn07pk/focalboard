@@ -91,7 +91,7 @@ function makeCommonConfig() {
         ],
         entry: ["./src/main.tsx", "./src/userSettings.ts"],
         output: {
-            library: "Karamalsharq",
+            library: "Focalboard",
             filename: "static/[name].js",
             path: outpath,
         },
